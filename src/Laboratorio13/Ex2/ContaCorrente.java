@@ -21,13 +21,15 @@ public class ContaCorrente extends Conta{
                 this.saldo -= valor;
             }
         } catch (Exception e) {
+            String message;
             if(this.chequeEspecial == 0) {
-                System.out.println("Saldo insuficiente no" +
+                message = ("Saldo insuficiente no" +
                         " cheque especial" + (valor - saldo));
             }
             else
-                System.out.println("Não há cheque especial" +
+                message = ("Não há cheque especial" +
                         (valor - (saldo + chequeEspecial)));
+            throw new ExcecaoChequeEspecial(message, valor - (saldo + chequeEspecial));
         }
     }
 
