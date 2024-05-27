@@ -3,6 +3,7 @@
 import java.util.Scanner;
 
 
+
 public class Main {
     public static void main(String[] args) {
         Veiculo teste1 = new Veiculo(500.0);
